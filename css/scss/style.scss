@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+
+  font-family: "Roboto", sans-serif;
+}
+body {
+  margin: 0;
+  .section {
+    & {
+      background-color: slategrey;
+      margin: 20px;
+      padding: 20px 30px;
+      border-radius: 10px;
+    }
+    &#new_entry_form {
+      fieldset {
+        & {
+          border: 1px solid white;
+          border-radius: 10px;
+        }
+
+        input {
+          //width: 50%;
+          max-width: 500px;
+        }
+
+        label {
+        }
+        #new_entry_more {
+          display: none;
+        }
+      }
+      .toggle {
+        cursor: default;
+        margin: 0;
+        &#up {
+          display: none;
+        }
+        &#down {
+          display: block;
+        }
+      }
+      #myDIV {
+        display: none;
+      }
+    }
+    &#table {
+      table {
+        & {
+          display: inline-table;
+
+          border-collapse: collapse;
+          // border-radius: 1em;
+          // overflow: hidden;
+
+          width: 100%;
+
+          background-color: white;
+        }
+        table,
+        th,
+        td {
+          border: 1px solid black;
+        }
+      }
+    }
+  }
+}

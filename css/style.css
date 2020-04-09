@@ -1,0 +1,60 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+body .section {
+  background-color: slategrey;
+  margin: 20px;
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+body .section#new_entry_form fieldset {
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+body .section#new_entry_form fieldset input {
+  max-width: 500px;
+}
+
+body .section#new_entry_form fieldset #new_entry_more {
+  display: none;
+}
+
+body .section#new_entry_form .toggle {
+  cursor: default;
+  margin: 0;
+}
+
+body .section#new_entry_form .toggle#up {
+  display: none;
+}
+
+body .section#new_entry_form .toggle#down {
+  display: block;
+}
+
+body .section#new_entry_form #myDIV {
+  display: none;
+}
+
+body .section#table table {
+  display: inline-table;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+}
+
+body .section#table table table,
+body .section#table table th,
+body .section#table table td {
+  border: 1px solid black;
+}
+/*# sourceMappingURL=style.css.map */

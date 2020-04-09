@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="libraries/p5.min.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="BookTracklist.js"
+    ></script>
+    <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <!-- This line removes any default padding and style.
+       You might only need one of these values set. -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="css/style.css"
+    />
+  </head>
+
+  <body>
+    <div class="section" id="new_entry_form">
+      <form name="new_entry" id="new_entry">
+        <fieldset>
+          <legend>New Entry</legend>
+
+          <label>Title:</label>
+          <input type="text" name="b_title" autocomplete="off" />
+          <br />
+
+          <label>Author:</label>
+          <input type="text" name="b_author" autocomplete="off" />
+
+          <select name="a_sex" id="">
+            <option value=""></option>
+            <option value="M">M</option>
+            <option value="F">F</option>
+            <option value="T">T</option>
+            <option value="O">O</option>
+          </select>
+          <br />
+
+          <label>Year of Publication:</label>
+          <select name="b_pub" id="year_select">
+            <option value=""></option>
+          </select>
+          <script>
+            for (let i = 2020; i >= 1000; i--) {
+              // get reference to select element
+              var sel = document.getElementById("year_select");
+
+              // create new option element
+              var opt = document.createElement("option");
+
+              // create text node to add to option element (opt)
+              opt.appendChild(document.createTextNode(i));
+
+              // set value property of opt
+              opt.value = i;
+
+              // add opt to end of select box (sel)
+              sel.appendChild(opt);
+            }
+          </script>
+          <br />
+
+          <p class="toggle" id="down" onclick="displayMore()">
+            More <span><i class="fas fa-angle-down"></i></span>
+          </p>
+          <p class="toggle" id="up" onclick="displayLess()">
+            More <span><i class="fas fa-angle-up"></i></span>
+          </p>
+
+          <div id="new_entry_more">
+            <label>Series Group</label>
+            <select name="s_group" id=""></select>
+            <label>Series</label>
+            <select name="s_name" id=""></select>
+            <label>#</label>
+            <input type="number" name="s_num" min="1" step="1" />
+
+            <!-- <input type="button" value="Add new" onclick= /> -->
+            <br />
+
+            <label>Language</label>
+            <select name="b_lan" id="">
+              <option value=""></option>
+              <option value="English">English</option>
+              <option value="Spanish">Spanish</option>
+            </select>
+            <br />
+          </div>
+          <input type="button" value="Add Entry" onclick="addEntry()" />
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="section" id="table">
+      <input type="button" value="View entries" onclick="viewEntries()" />
+      <br />
+      <br />
+      <table></table>
+    </div>
+
+    <br />
+  </body>
+  <script>
+    viewEntries();
+  </script>
+</html>
