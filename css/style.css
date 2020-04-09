@@ -45,16 +45,49 @@ body .section#new_entry_form #myDIV {
   display: none;
 }
 
-body .section#table table {
+body .section#table .refresh_button {
+  width: 100%;
+  height: 20px;
+}
+
+body .section#table .refresh_button #refresh_table {
+  float: right;
+  font-size: 15px;
+}
+
+body .section#table .container {
+  overflow-x: auto;
+  overflow-y: auto;
+  margin-top: 10px;
+  width: 100%;
+  height: 500px;
+}
+
+body .section#table .container table {
   display: inline-table;
   border-collapse: collapse;
   width: 100%;
+  min-width: 800px;
   background-color: white;
 }
 
-body .section#table table table,
-body .section#table table th,
-body .section#table table td {
+body .section#table .container table table,
+body .section#table .container table th,
+body .section#table .container table td {
   border: 1px solid black;
+}
+
+body .section#table .container table th,
+body .section#table .container table td {
+  min-width: 60px;
+  max-width: 500px;
+}
+
+body .section#table .container table th {
+  height: 50px;
+}
+
+body .section#table .container table td.center {
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

@@ -84,13 +84,13 @@
           </script>
           <br />
 
-            <label>Language</label>
-            <select name="b_lan" id="">
-              <option value=""></option>
-              <option value="English">English</option>
-              <option value="Spanish">Spanish</option>
-            </select>
-            <br />
+          <label>Language</label>
+          <select name="b_lan" id="">
+            <option value=""></option>
+            <option value="English">English</option>
+            <option value="Spanish">Spanish</option>
+          </select>
+          <br />
 
           <p class="toggle" id="down" onclick="displayMore()">
             More <span><i class="fas fa-angle-down"></i></span>
@@ -116,10 +116,14 @@
     </div>
 
     <div class="section" id="table">
-      <input type="button" value="View entries" onclick="viewEntries()" />
-      <br />
-      <br />
-      <table></table>
+      <div class="refresh_button">
+        <button id="refresh_table" onclick="viewEntries()">
+          <i class="fas fa-sync-alt"></i>
+        </button>
+      </div>
+      <div class="container">
+        <table></table>
+      </div>
     </div>
 
     <br />

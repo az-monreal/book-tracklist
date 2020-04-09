@@ -58,8 +58,8 @@ function ctrlq(e) {
     while (table.hasChildNodes()) {
       table.removeChild(table.firstChild);
     }
-    generateTableHead(table, data);
-    generateTable(table, e.return);
+
+    generateTable(table, e.return, generateTableHead(table, data));
   }
 }
 
@@ -87,20 +87,33 @@ function displayLess() {
 function generateTableHead(table, data) {
   let thead = table.createTHead();
   let row = thead.insertRow();
-  for (let r = 0; r < data.length; r++) {
+
+  let c_header = ["Sex", "Year of Publication", "#"];
+  let c_col = [];
+
+  for (let c = 0; c < data.length; c++) {
     let th = document.createElement("th");
-    let text = document.createTextNode(data[r]);
+    let text = document.createTextNode(data[c]);
+    if (c_header.includes(data[c])) {
+      c_col.push(c);
+    }
     th.appendChild(text);
     row.appendChild(th);
   }
+  return c_col;
 }
 
-function generateTable(table, data) {
-  for (let c = 1; c < data.length; c++) {
+function generateTable(table, data, c_col) {
+  for (let r = 1; r < data.length; r++) {
     let row = table.insertRow();
-    for (let r = 0; r < data[c].length; r++) {
+    for (let c = 0; c < data[r].length; c++) {
       let cell = row.insertCell();
-      let text = document.createTextNode(data[c][r]);
+      let text = document.createTextNode(data[r][c]);
+
+      if (c_col.includes(c)) {
+        cell.classList.add("center");
+      }
+
       cell.appendChild(text);
     }
   }
