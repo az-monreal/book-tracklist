@@ -1,23 +1,34 @@
-* {
+#C92626 #1d3557 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
   margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: #f1faee;
 }
 
 body .section {
-  background-color: slategrey;
   margin: 20px;
   padding: 20px 30px;
+  border: 5px solid #1d3557;
   border-radius: 10px;
+  background-color: #a8dadc;
 }
 
 body .section#new_entry_form fieldset {
-  border: 1px solid white;
   border-radius: 10px;
+  border: 3px solid #457b9d;
+  background-color: #f1faee;
+}
+
+body .section#new_entry_form fieldset legend {
+  font-weight: bold;
+  background-color: #f1faee;
+  border-radius: 5px;
+  border: 2px solid #457b9d;
 }
 
 body .section#new_entry_form fieldset input {
@@ -59,32 +70,39 @@ body .section#table .container {
   overflow-x: auto;
   overflow-y: auto;
   margin-top: 10px;
+  padding: 10px;
   width: 100%;
   height: 500px;
 }
 
 body .section#table .container table {
-  display: inline-table;
+  padding: 20px;
   border-collapse: collapse;
   width: 100%;
   min-width: 800px;
-  background-color: white;
+  background-color: #f1faee;
 }
 
-body .section#table .container table table,
-body .section#table .container table th,
-body .section#table .container table td {
-  border: 1px solid black;
+body .section#table .container table .header {
+  display: table;
+  overflow: auto;
+  width: 100%;
 }
 
 body .section#table .container table th,
 body .section#table .container table td {
-  min-width: 60px;
+  min-width: 100px;
   max-width: 500px;
+  border-bottom: 2px solid #1d3557;
+  border-top: 2px solid #1d3557;
 }
 
 body .section#table .container table th {
   height: 50px;
+}
+
+body .section#table .container table td {
+  height: 40px;
 }
 
 body .section#table .container table td.center {

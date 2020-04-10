@@ -86,6 +86,7 @@ function displayLess() {
 
 function generateTableHead(table, data) {
   let thead = table.createTHead();
+  thead.classList.add("header");
   let row = thead.insertRow();
 
   let c_header = ["Sex", "Year of Publication", "#"];
